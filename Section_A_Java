@@ -1,0 +1,41 @@
+Hi Student :)
+
+I found that your JOptionPane was working correctly, the problem was your while loop on line 8.
+The reason why your '!=' (not equal to) did not work is because this is only used 
+to compare two of the same objects. For example:
+
+int i = 10;
+int x = 15;
+
+if(i != 10)
+	{
+		//this will enter the if statement
+	}
+
+ To compare different object, use '.equals() as follows: ' if(!choice.equals("Bob")) '
+
+Also another note, it is always important to keep proper spacing in your code to keep 
+it presentable and easy to read. So in line 5 your 'System.out...' can all be on one line, as well as 
+the JOptionPane on line 6.
+
+
+Below is my reworked code. I was not sure if I needed to include this, so I did just in case.
+(Please note that the above mentioned line numbers do not apply here)
+_________________________________________________________________________________________________
+
+package do_whilePassword;
+import java.util.*;  
+import javax.swing.*;
+
+public class Main {
+
+    public static void main(String[] args) 
+    {
+        String choice = ""; 
+        do {
+        //System.out.println( "Enter today's number from the menu:" ); 
+        choice = JOptionPane.showInputDialog("Please enter in a password");
+       }
+        while(!choice.equals("John"));
+    }
+}
